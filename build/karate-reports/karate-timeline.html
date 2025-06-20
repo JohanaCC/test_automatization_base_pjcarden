@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <title>Karate Timeline</title>
+    <style>
+      body, html { font-family: arial, sans-serif; font-size: 11pt; }
+      #visualization { box-sizing: border-box; width: 100%; height: 300px; }
+      .vis-item.failed { background-color: #F2928C; }
+      .page-heading { padding: 0.5em; margin-bottom: 0.5em; background-color: lightcyan; border: 1px solid gray; }
+    </style>
+    <script src="res/vis.min.js"></script>
+    <link href="res/vis.min.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <div class="page-heading">
+      <a href="karate-summary.html">Summary</a>
+    </div>     
+    <div id="visualization"></div>
+    <script>
+var groups = [{"content":"Test worker","id":1}];
+var items = [{"id":1,"group":1,"content":"features\/karate-test[1:19]","start":1750436431512,"end":1750436432644,"title":"features\/karate-test[1:19] 11:20:31.512-11:20:32.644 T-API-HU-EvalPC001-CA01-Obtener lista vacía de personajes 200 - karate"},{"id":2,"group":1,"content":"features\/karate-test[2:28]","start":1750436432655,"end":1750436432886,"title":"features\/karate-test[2:28] 11:20:32.655-11:20:32.886 T-API-HU-EvalPC001-CA02-Obtener personaje por ID exitoso 200 - karate (Si falla alguien borro mi Doraemon :\/)"},{"id":3,"group":1,"content":"features\/karate-test[3:38]","start":1750436432887,"end":1750436433116,"title":"features\/karate-test[3:38] 11:20:32.887-11:20:33.116 T-API-HU-EvalPC001-CA03-Obtener personaje por ID no existe 404 - karate"},{"id":4,"group":1,"content":"features\/karate-test[4:46]","start":1750436433117,"end":1750436433397,"title":"features\/karate-test[4:46] 11:20:33.117-11:20:33.397 T-API-HU-EvalPC001-CA04-Crear personaje exitosamente 201 - karate"},{"id":5,"group":1,"content":"features\/karate-test[5:58]","start":1750436433398,"end":1750436433617,"title":"features\/karate-test[5:58] 11:20:33.398-11:20:33.617 T-API-HU-EvalPC001-CA05-Crear personaje con nombre duplicado 400 - karate"},{"id":6,"group":1,"content":"features\/karate-test[6:66]","start":1750436433625,"end":1750436433834,"title":"features\/karate-test[6:66] 11:20:33.625-11:20:33.834 T-API-HU-EvalPC001-CA06-Crear personaje faltan campos requeridos 400 - karate"},{"id":7,"group":1,"content":"features\/karate-test[7:74]","start":1750436433835,"end":1750436434054,"title":"features\/karate-test[7:74] 11:20:33.835-11:20:34.054 T-API-HU-EvalPC001-CA07-Actualizar personaje exitosamente 200 - karate"},{"id":8,"group":1,"content":"features\/karate-test[8:83]","start":1750436434061,"end":1750436434273,"title":"features\/karate-test[8:83] 11:20:34.061-11:20:34.273 T-API-HU-EvalPC001-CA08-Actualizar personaje no existe 404 - karate"},{"id":9,"group":1,"content":"features\/karate-test[9:91]","start":1750436434274,"end":1750436434726,"title":"features\/karate-test[9:91] 11:20:34.274-11:20:34.726 T-API-HU-EvalPC001-CA04-Crear y eliminar personaje exitosamente - karate"},{"id":10,"group":1,"content":"features\/karate-test[10:110]","start":1750436434734,"end":1750436434942,"title":"features\/karate-test[10:110] 11:20:34.734-11:20:34.942 T-API-HU-EvalPC001-CA10-Eliminar personaje no existe 404 - karate"}];
+</script>
+    <script>
+      var container = document.getElementById('visualization');
+      var timeline = new vis.Timeline(container);
+      timeline.setOptions({groupOrder: 'content'});
+      timeline.setGroups(new vis.DataSet(groups));
+      timeline.setItems(new vis.DataSet(items));
+    </script>
+  </body>
+</html>
