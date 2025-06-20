@@ -26,7 +26,7 @@ Feature: HU-EvalPC001 CRUD de personajes Marvel (microservicio para gestión de 
 
   @id:2 @obtenerPersonajePorId @exitoso200
   Scenario: T-API-HU-EvalPC001-CA02-Obtener personaje por ID exitoso 200 - karate (Si falla alguien borro mi Doraemon :/)
-    * def id_character = 55
+    * def id_character = 1873
     * def name_character = 'Doraemon'
     Given path 'testuser', 'api', 'characters', id_character
     When method GET
@@ -72,7 +72,7 @@ Feature: HU-EvalPC001 CRUD de personajes Marvel (microservicio para gestión de 
 
   @id:7 @actualizarPersonaje @exitoso200
   Scenario: T-API-HU-EvalPC001-CA07-Actualizar personaje exitosamente 200 - karate
-    * def id_character = 55
+    * def id_character = 1873
     Given path 'testuser', 'api', 'characters', id_character
     And request karate.read('classpath:data/marvel_characters_api/request_update_character.json')
     When method PUT
